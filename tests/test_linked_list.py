@@ -1,6 +1,4 @@
-import pytest
-
-from chapter2.linked_list import Node, LinkedList, remove_dupes_set
+from chapter2.linked_list import Node, LinkedList
 
 
 def test_node():
@@ -19,21 +17,3 @@ def test_iterate():
 
     for i, node in enumerate(lst):
         assert (i == node.val)
-
-
-@pytest.mark.parametrize("test_input,expected", [
-    ([1, 1], [1]),
-    ([1, 1, 2], [1, 2]),
-    ([1, 2, 2, 3], [1, 2, 3]),
-    ([1, 1, 3, 4, 3, 5, 6], [1, 3, 4, 5, 6])
-])
-def test_remove_dupes(test_input, expected):
-    lst = LinkedList()
-    for val in test_input:
-        tmp_node = Node(val)
-        lst.add(tmp_node)
-
-    remove_dupes_set(lst)
-    for i, node in enumerate(lst):
-        print(i, node.val)
-        assert (expected[i] == node.val)
