@@ -17,7 +17,7 @@ def remove_dupes_set(lst: LinkedList):
         cur = cur.next
 
 
-def removed_dupes_pythonic(lst: LinkedList):
+def remove_dupes_pythonic(lst: LinkedList):
     checker = set()
     checker_add = checker.add
     return [x for x in lst if not (x.val in checker or checker_add(x.val))]

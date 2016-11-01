@@ -23,3 +23,16 @@ class LinkedList:
             yield cur_node
             cur_node = cur_node.next
 
+    """
+    def __iter__(self):
+        self.state = self.head
+        return self
+
+    def __next__(self):
+        if self.state is not None:
+            ret = self.state
+            self.state = self.state.next
+            return ret
+        else:
+            raise StopIteration
+    """

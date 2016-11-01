@@ -1,7 +1,7 @@
 import pytest
 
 from chapter2.linked_list import Node, LinkedList
-from chapter2.qustion2_1 import remove_dupes_set, remove_dupes_no_temp, removed_dupes_pythonic
+from chapter2.question2_1 import remove_dupes_set, remove_dupes_no_temp, remove_dupes_pythonic
 
 testdata = [
     ([1, 1], [1]),
@@ -36,13 +36,15 @@ def test_remove_dupes_set(test_input, expected):
 def test_remove_dupes_pythonic(test_input, expected):
     lst = generate_list(test_input)
 
-    lst = removed_dupes_pythonic(lst)
+    lst = remove_dupes_pythonic(lst)
 
     for i, node in enumerate(lst):
         assert (expected[i] == node.val)
 
 
 # Question 2.1 No temporary data structure
+# O(n^2) time
+# O(1) space
 @pytest.mark.parametrize("test_input,expected", testdata)
 def test_remove_dupes_set(test_input, expected):
     lst = generate_list(test_input)
