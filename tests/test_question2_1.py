@@ -1,6 +1,6 @@
 import pytest
 
-from chapter2.linked_list import Node, LinkedList
+from chapter2.linked_list import generate_list
 from chapter2.question2_1 import remove_dupes_set, remove_dupes_no_temp, remove_dupes_pythonic
 
 testdata = [
@@ -9,14 +9,6 @@ testdata = [
     ([1, 2, 2, 3], [1, 2, 3]),
     ([1, 1, 3, 4, 3, 5, 6], [1, 3, 4, 5, 6])
 ]
-
-
-def generate_list(input_data):
-    lst = LinkedList()
-    for val in input_data:
-        tmp_node = Node(val)
-        lst.add(tmp_node)
-    return lst
 
 
 # Question 2.1 Using Set
@@ -30,6 +22,7 @@ def test_remove_dupes_set(test_input, expected):
 
     for i, node in enumerate(lst):
         assert (expected[i] == node.val)
+
 
 # Question 2.1 Pythonic
 @pytest.mark.parametrize("test_input,expected", testdata)
