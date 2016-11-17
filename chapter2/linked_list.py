@@ -38,6 +38,17 @@ class LinkedList:
         "Returns the nth item or a default value"
         return next(islice(self, index, None), None)
 
+    def insert_at(self, element, index):
+        cur_node = self.head
+        for i in range(0, index-1):
+            if cur_node.next:
+                cur_node = cur_node.next
+            else:
+                return False
+
+        tmp
+
+
     """
     def __iter__(self):
         self.state = self.head
