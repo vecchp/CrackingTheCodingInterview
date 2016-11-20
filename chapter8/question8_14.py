@@ -23,7 +23,7 @@ def countEval(s, desired):
         left, right = s[0:i], s[i + 1:]
         left_true, left_false = countEval(left, True), countEval(left, False)
         right_true, right_false = countEval(right, True), countEval(right, False)
-
+        """
         if c == '^':
             if desired:
                 sub_ways = left_true * right_false + left_false * right_true
@@ -40,24 +40,40 @@ def countEval(s, desired):
                 sub_ways = left_true * right_true + left_false * right_true + left_true * right_false
             else:
                 sub_ways = left_false * right_false
+        """
         # now we want to check if we are at an operator
-        """total = (left_true + left_false) * (right_true + right_false)
+        total = (left_true + left_false) * (right_true + right_false)
         total_true = 0
         if c == '^':
-            sub_ways = left_true * right_false + left_false * right_true
+            total_true = left_true * right_false + left_false * right_true
         elif c == '&':
-            sub_ways = left_true * right_true
+            total_true = left_true * right_true
         elif c == '|':
-            sub_ways = left_true * right_true + left_false * right_true + left_true * right_false
-        """
+            total_true = left_true * right_true + left_false * right_true + left_true * right_false
+        sub_ways = total_true if desired else total - total_true
         ways += sub_ways
     return ways
 
 
 if __name__ == '__main__':
+    """
+    1^0|0|1 0
+    1^0|0|1 1
+    1&0|1^0|0|1&1&0 0
+    1&0|1^0|0|1&1&0 1
+    0^0|1&1^1|0|1 1
+    0^0|1&1^1|0|1 0
+    """
+
     #print(countEval('1^0|0|1', False))
 
+    print(countEval('1^0|0|1', False))
+    print(countEval('1^0|0|1', True))
     print(countEval('1&0|1^0|0|1&1&0', False))
+    print(countEval('1&0|1^0|0|1&1&0', True))
+    print(countEval('0^0|1&1^1|0|1', False))
+    print(countEval('0^0|1&1^1|0|1', True))
+
     #test = '0&0&0&1^1|0'
     #i = 9
 
