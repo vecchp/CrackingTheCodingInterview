@@ -46,8 +46,6 @@ class LinkedList:
             else:
                 return False
 
-        tmp
-
 
     """
     def __iter__(self):
