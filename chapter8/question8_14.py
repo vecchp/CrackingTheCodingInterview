@@ -67,12 +67,12 @@ if __name__ == '__main__':
 
     #print(countEval('1^0|0|1', False))
 
-    print(countEval('1^0|0|1', False))
-    print(countEval('1^0|0|1', True))
+    #print(countEval('1^0|0|1', False))
+    #print(countEval('1^0|0|1', True))
     print(countEval('1&0|1^0|0|1&1&0', False))
-    print(countEval('1&0|1^0|0|1&1&0', True))
-    print(countEval('0^0|1&1^1|0|1', False))
-    print(countEval('0^0|1&1^1|0|1', True))
+    #print(countEval('1&0|1^0|0|1&1&0', True))
+    #print(countEval('0^0|1&1^1|0|1', False))
+    #print(countEval('0^0|1&1^1|0|1', True))
 
     #test = '0&0&0&1^1|0'
     #i = 9
